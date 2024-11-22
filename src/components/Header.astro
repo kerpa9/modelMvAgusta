@@ -1,0 +1,73 @@
+---
+import HeaderButton from "./HeaderButton.astro";
+---
+
+<header class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
+  <div class="mx-auto text-center mb-8 lg:mb-16">
+    <h2 class="mb-4 text-5xl tracking-tight font-extrabold text-white">
+      SpaceX launches🌩️
+    </h2>
+    <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+  </div>
+
+  <nav
+    class="flex flex-col items-center justify-between w-full text-center md:flex-row"
+  >
+    <HeaderButton class="text-white" href="/">
+      <svg
+        slot="after"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-history"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+          d="M12 8l0 4l2 2"></path><path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"
+        ></path></svg
+      >Ùltimos lazamientos</HeaderButton
+    >
+    <HeaderButton class="text-white" href="/about"
+      ><svg
+        slot="after"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bing"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+          d="M5 3l4 1.5v12l6 -2.5l-2 -1l-1 -4l7 2.5v4.5l-10 5l-4 -2z"
+        ></path></svg
+      >
+      Sobre el proyecto</HeaderButton
+    >
+    <HeaderButton class="text-white" href="/oldest">
+      <svg
+        slot="before"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-color-filter"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+          d="M13.58 13.79c.27 .68 .42 1.43 .42 2.21c0 1.77 -.77 3.37 -2 4.46a5.93 5.93 0 0 1 -4 1.54c-3.31 0 -6 -2.69 -6 -6c0 -2.76 1.88 -5.1 4.42 -5.79"
+        ></path><path
+          d="M17.58 10.21c2.54 .69 4.42 3.03 4.42 5.79c0 3.31 -2.69 6 -6 6a5.93 5.93 0 0 1 -4 -1.54"
+        ></path><path d="M12 8m-6 0a6 6 0 1 0 12 0a6 6 0 1 0 -12 0"></path></svg
+      >Los mas viejos</HeaderButton
+    >
+  </nav>
+</header>
