@@ -1,0 +1,39 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getLatestLaunch, getLaunchBy } from "../../services/help";
+import { LanguageServiceMode } from "typescript";
+import Layout from "../../layouts/Layout.astro";
+
+const { id } = Astro.params;
+
+let launch = null;
+if (id) {
+  //   Astro.redirect("/");
+  launch = await getLaunchBy({ id });
+}
+
+export async function getStaticPaths() {
+  const launches = await getLatestLaunch();
+
+  return launches.map((launch) => ({
+    params: { id: launch.id },
+  }));
+}
+
+console.log(launch);
+---
+
+<Layout title=`Lanzamineto: ${id}`>
+  <article class="flex gap-y-4 flex-col justify-center">
+    <img
+      class="w-52 h-auto"
+      src={launch?.links?.patch.small}
+      alt={launch?.name}
+    />
+    <h2 class="text-4xl text-white font-bold">
+      Launch # {launch?.flight_number}
+    </h2>
+
+    <p class="text-lg">{launch?.details}</p>
+  </article>
+</Layout>
